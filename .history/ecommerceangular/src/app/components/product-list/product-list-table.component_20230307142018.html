@@ -1,3 +1,12 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Unit</th>
+    </tr>
+  </thead>
+</table>
 <p *ngFor="let tempProduct of products"> <!-- In Angular we use *ngFor to show our existing list in our HTML page. -->
   {{ tempProduct.name }} : {{tempProduct.unitPrice | currency : 'EUR'}}
 </p>
