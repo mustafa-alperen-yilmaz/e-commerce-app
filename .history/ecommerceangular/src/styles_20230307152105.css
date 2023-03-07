@@ -313,12 +313,12 @@ input.au-input.au-input-xl{
   left:0;
   top:0;
   bottom:0;
-  background:#04ad9f;
+  background:#fff;
   overflow-y:auto
 }
 
 .menu-sidebar .logo{
-  background:#013066;
+  background:#fff;
   height:120px;
   padding:0 40px;
   display:-webkit-box;
