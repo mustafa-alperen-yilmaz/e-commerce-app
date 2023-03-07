@@ -760,7 +760,7 @@ footer ul li a{
 footer{
   background:#232324;
   z-index:1;
-  position:initial;
+  position:fixed;
   text-align:center;
   padding:0px 0px 0px 0px;
 }

@@ -760,9 +760,8 @@ footer ul li a{
 footer{
   background:#232324;
   z-index:1;
-  position:initial;
-  text-align:center;
-  padding:0px 0px 0px 0px;
+  position:relative;
+  text-align:center
 }
 footer li a{
   color:#313131;
@@ -771,7 +770,7 @@ footer li a{
 footer ul li{
   display:inline-block;
   font-size:14px;
-  padding:10px 20px
+  padding:10px 300px
 }
 
 /*
