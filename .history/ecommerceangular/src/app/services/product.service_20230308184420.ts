@@ -19,8 +19,8 @@ export class ProductService {
     );
   }
   getProductCategories(): Observable<ProductCategory[]>{
-    return this.httpClient.get<GetResponseProductCategory>(this.categoryUrl)
-    .pipe(map(response => response._embedded.productCategory));
+    return this.httpClient.get<GetResponseProductCategory>(categoryUrl)
+    .pipe(map(response => response._embedded.products));
   }
 }
 interface GetResponseProducts {
