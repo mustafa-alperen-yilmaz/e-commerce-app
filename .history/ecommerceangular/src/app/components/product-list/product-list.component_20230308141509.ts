@@ -10,23 +10,23 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class ProductListComponent implements OnInit {
   products : Product[] =[];
-  currentCategoryId: number = 1;
+  currentCategoryId: number;
   constructor(private productService: ProductService ,
-              private route : ActivatedRoute) {
+      private route : ActivatedRoute) {
     }
   ngOnInit():void{
     this.route.paramMap.subscribe(() => {
-      this.listProducts();
+    this.listProducts();
     });
   }
   listProducts(){
-    const hasCategoryId: boolean = this.route.snapshot.paramMap.has('id');
+    const hasCategoryId: boolean = this.route.snapshot.paramMap.get('id');
     if(hasCategoryId){
-      this.currentCategoryId = +this.route.snapshot.paramMap.get('id')!;
+      this.currentCategoryId = + this.route.snapshot.paramMap.get('id');
     }else{
       this.currentCategoryId = 1;
     }
-    this.productService.getProductList(this.currentCategoryId)
+    this.productService.getProductList(this.currentCategoryID)
     .subscribe(data => {
       this.products = data;
     })
