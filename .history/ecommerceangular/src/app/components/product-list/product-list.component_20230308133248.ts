@@ -23,10 +23,8 @@ export class ProductListComponent implements OnInit {
     const hasCategoryId: boolean = this.route.snapshot.paramMap.get('id');
     if(hasCategoryId){
       this.currentCategoryId = +this.route.snapshot.paramMap.get('id');
-    }else{
-      this.currentCategoryId = 1;
     }
-    this.productService.getProductList(this.currentCategoryID)
+    this.productService.getProductList()
     .subscribe(data => {
       this.products = data;
     })

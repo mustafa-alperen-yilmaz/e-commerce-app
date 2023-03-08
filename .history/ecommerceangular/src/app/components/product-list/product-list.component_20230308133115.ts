@@ -1,7 +1,6 @@
 import { Component , OnInit } from '@angular/core';
 import { ProductService } from 'src/app/services/product.service';
 import { Product } from 'src/app/common/product';
-import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
@@ -22,11 +21,9 @@ export class ProductListComponent implements OnInit {
   listProducts(){
     const hasCategoryId: boolean = this.route.snapshot.paramMap.get('id');
     if(hasCategoryId){
-      this.currentCategoryId = +this.route.snapshot.paramMap.get('id');
-    }else{
-      this.currentCategoryId = 1;
+      this.currentCategoryId = Number(this.route.snapshot.paramMap.get('id'));
     }
-    this.productService.getProductList(this.currentCategoryID)
+    this.productService.getProductList()
     .subscribe(data => {
       this.products = data;
     })

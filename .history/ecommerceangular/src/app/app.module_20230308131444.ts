@@ -21,7 +21,7 @@ const routes : Routes=[
     ProductListComponent
   ],
   imports: [
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' }),
     BrowserModule,
     HttpClientModule
   ],
