@@ -1,10 +1,6 @@
 package com.example.ecommerce.confige;
 
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
@@ -15,7 +11,6 @@ import com.example.ecommerce.entity.Product;
 import com.example.ecommerce.entity.ProductCategory;
 
 import jakarta.persistence.EntityManager;
-import jakarta.persistence.metamodel.EntityType;
 
 @Configuration
 public class FileRestConfige implements RepositoryRestConfigurer {
@@ -42,11 +37,5 @@ public class FileRestConfige implements RepositoryRestConfigurer {
     }
     private void exposeIds(RepositoryRestConfiguration config) {
         Set<EntityType<?>> entities = entityManager.getMetamodel().getEntities();
-        List<Class> entityManagerClasses = new ArrayList<>();
-        for(EntityType tempEntityType : entities) {
-            entityManagerClasses.add(tempEntityType.getJavaType());
-        }
-        Class[] classes = entityManagerClasses.toArray(new Class[0]);
-        config.exposeIdsFor(classes);
     }
 }

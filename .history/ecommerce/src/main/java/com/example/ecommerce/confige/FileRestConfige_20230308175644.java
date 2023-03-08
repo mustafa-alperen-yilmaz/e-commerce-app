@@ -46,7 +46,5 @@ public class FileRestConfige implements RepositoryRestConfigurer {
         for(EntityType tempEntityType : entities) {
             entityManagerClasses.add(tempEntityType.getJavaType());
         }
-        Class[] classes = entityManagerClasses.toArray(new Class[0]);
-        config.exposeIdsFor(classes);
     }
 }
