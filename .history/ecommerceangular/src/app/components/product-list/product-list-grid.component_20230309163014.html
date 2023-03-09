@@ -7,9 +7,7 @@
               <a routerLink="/products/{{tempProduct.id}}">
                 <img src="{{tempProduct.imageUrl}}" alt="" class="img-responsive">
               </a>
-              <a routerLink="/products/{{tempProduct.id}}">
-                <h1>{{tempProduct.name}}</h1>
-              </a>
+              <h1>{{tempProduct.name}}</h1>
               <div class="price">
                 {{tempProduct.unitPrice | currency : 'EUR'}}
               </div>

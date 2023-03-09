@@ -5,11 +5,9 @@
           <div *ngFor="let tempProduct of products" class="col-md-3">
             <div class="product-box">
               <a routerLink="/products/{{tempProduct.id}}">
-                <img src="{{tempProduct.imageUrl}}" alt="" class="img-responsive">
+              <img src="{{tempProduct.imageUrl}}" alt="" class="img-responsive">
               </a>
-              <a routerLink="/products/{{tempProduct.id}}">
-                <h1>{{tempProduct.name}}</h1>
-              </a>
+              <h1>{{tempProduct.name}}</h1>
               <div class="price">
                 {{tempProduct.unitPrice | currency : 'EUR'}}
               </div>
