@@ -12,7 +12,6 @@ export class ProductService {
   private baseUrl="http://localhost:8080/api/products"; // standart shows 20 products if we want add ?size=number it shows number of products.
   private categoryUrl = "http://localhost:8080/api/product-category";
   constructor(private httpClient : HttpClient) { }
-
   getProductList(theCategoryId : Number): Observable<Product[]>{
     const searchUrl = `${this.baseUrl}/search/findByCategoryId?id=${theCategoryId}`;
     return this.getProducts(searchUrl);
