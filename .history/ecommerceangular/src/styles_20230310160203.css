@@ -713,29 +713,13 @@ table.table.table-bordered th{
   font-weight:800;
   color:#000000
 }
-.price-v2{
-  font-weight:800;
-  color:#000000
-}
 .detail-section{
   margin-top:60px
 }
 .detail-img{
   width: 30%;
-}
-.new-h3{
-  margin-right: 400px;
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-  font-weight: 500;
-  line-height: 1.2;
-}
-.product-descripton-page{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
+}
 /**/
 
 /*
@@ -763,21 +747,7 @@ a.primary-btn:hover{
   background:#999999;
   color:#fff
 }
-a.primary-btn-v2{
-  background:#100029;
-  padding:7px 20px;
-  text-align:center;
-  display:inline-block;
-  color:#fff;
-  border-radius:2px;
-  font-size:14px;
-  margin-top:5px;
-  margin-left: 200px;
-}
-a.primary-btn-v2:hover{
-  background:#999999;
-  color:#fff
-}
+
 .active-link {
 font-weight: bold;
 }

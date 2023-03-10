@@ -1,0 +1,13 @@
+<div class="detail-section">
+  <div class="container-fluid">
+    <img src="{{product.imageUrl}}" class="detail-img" alt="{{product.name}}">
+    <h3 class="new-h3"> {{product.name}} </h3>
+    <div class="price-v2">{{product.unitPrice | currency : 'EUR'}}</div>
+    <a href="#" class="primary-btn-v2">Add To Cart</a>
+    <hr>
+    <h4>Description</h4>
+    <div class="product-descripton-page">
+      <p>{{product.description}}</p>
+    </div>
+  </div>
+</div>

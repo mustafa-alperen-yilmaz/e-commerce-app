@@ -714,6 +714,7 @@ table.table.table-bordered th{
   color:#000000
 }
 .price-v2{
+  margin:15px 0 0 400px;
   font-weight:800;
   color:#000000
 }
@@ -722,6 +723,9 @@ table.table.table-bordered th{
 }
 .detail-img{
   width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .new-h3{
   margin-right: 400px;
@@ -772,7 +776,7 @@ a.primary-btn-v2{
   border-radius:2px;
   font-size:14px;
   margin-top:5px;
-  margin-left: 200px;
+  margin-left: 400px;
 }
 a.primary-btn-v2:hover{
   background:#999999;
