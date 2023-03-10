@@ -742,11 +742,9 @@ table.table.table-bordered th{
   margin-top: 5%;
   width: 50%;
   height: auto;
-  margin-left: 25%;
 }
 .product-descripton-page .product-name-details-class{
   margin-top: 10%;
-  font-weight: bold;
 }
 /**/
 
@@ -782,7 +780,7 @@ a.primary-btn-v2{
   display:inline-block;
   color:#fff;
   border-radius:2px;
-  font-size:20px;
+  font-size:14px;
   margin-top:5px;
   margin-left: 200px;
 }
@@ -824,7 +822,6 @@ footer {
   text-align: center;
   padding: 0;
   z-index: -1;
-  margin-top: auto;
 }
 
 footer li a{
