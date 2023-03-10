@@ -750,6 +750,7 @@ table.table.table-bordered th{
 }
 .product-descripton-page .product-description-text-on-description-page{
   margin-bottom: 20px;
+  margin-block-end: auto;
 }
 /**/
 

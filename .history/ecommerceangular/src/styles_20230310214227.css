@@ -748,9 +748,6 @@ table.table.table-bordered th{
   margin-top: 10%;
   font-weight: bold;
 }
-.product-descripton-page .product-description-text-on-description-page{
-  margin-bottom: 20px;
-}
 /**/
 
 /*
@@ -827,7 +824,7 @@ footer {
   text-align: center;
   padding: 0;
   z-index: 1;
-  margin-left: 8.5%;
+  margin-left: 9%;
   margin-top: auto;
 }
 
@@ -838,8 +835,7 @@ footer li a{
 footer ul li{
   display:inline-block;
   font-size:14px;
-  padding: 10px 20px;
-  margin-right: 20%;
+  padding:10px 20px
 }
 
 /*

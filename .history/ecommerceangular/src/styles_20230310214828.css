@@ -749,7 +749,8 @@ table.table.table-bordered th{
   font-weight: bold;
 }
 .product-descripton-page .product-description-text-on-description-page{
-  margin-bottom: 20px;
+  margin-bottom: 20%;
+  z-index: 2;
 }
 /**/
 
