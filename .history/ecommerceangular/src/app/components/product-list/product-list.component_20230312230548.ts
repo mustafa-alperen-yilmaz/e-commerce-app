@@ -18,7 +18,6 @@ export class ProductListComponent implements OnInit {
   ngOnInit(){
     this.route.paramMap.subscribe(() => {
       this.listProducts();
-      console.log(this.products);
     });
   }
   listProducts(){
@@ -33,7 +32,6 @@ export class ProductListComponent implements OnInit {
     const theKeyword: string = this.route.snapshot.paramMap.get('keyword')!;
     this.productService.searchProducts(theKeyword).subscribe(
       data =>{
-        console.log(this.products)
         this.products = data;
       }
     );
