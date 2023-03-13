@@ -9,6 +9,7 @@ import {Routes, RouterModule} from '@angular/router';
 import { ProductCategoryMenuComponent } from './components/product-category-menu/product-category-menu.component';
 import { SearchComponent } from './components/search/search.component';
 import { ProducDetailsComponent } from './components/produc-details/produc-details.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 const routes : Routes=[
   {path: 'products/:id', component: ProducDetailsComponent},
@@ -31,7 +32,8 @@ const routes : Routes=[
   imports: [
     RouterModule.forRoot(routes),
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [ProductService],
   bootstrap: [AppComponent]
