@@ -19,12 +19,14 @@ import jakarta.persistence.metamodel.EntityType;
 
 @Configuration
 public class FileRestConfige implements RepositoryRestConfigurer {
+
     private EntityManager entityManager;
     @Autowired
-    public FileRestConfige(EntityManager entityManager1) {
-        entityManager = entityManager1;
+    public FileRestConfige(EntityManager theEntityManager) {
+        entityManager = theEntityManager;
     }
-    
+    /* 
+    @Override
     public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config) {
         // Disable to unsported actions (it makes read only)
         HttpMethod[] theUnsportedActions = {HttpMethod.PUT, HttpMethod.POST, HttpMethod.DELETE};
@@ -40,24 +42,16 @@ public class FileRestConfige implements RepositoryRestConfigurer {
 
          exposeIds(config);
     }
-    /* 
     private void exposeIds(RepositoryRestConfiguration config) {
         Set<EntityType<?>> entities = entityManager.getMetamodel().getEntities();
-        List<Class> entityManagerClasses = new ArrayList<>();
+        List<Class> entityClasses = new ArrayList<>();
         for(EntityType tempEntityType : entities) {
-            entityManagerClasses.add(tempEntityType.getJavaType());
+            entityClasses.add(tempEntityType.getJavaType());
         }
-        Class[] classes = entityManagerClasses.toArray(new Class[0]);
+        Class[] classes = entityClasses.toArray(new Class[0]);
         config.exposeIdsFor(classes);
     }
     */
-    private void exposeIds(RepositoryRestConfiguration config) {
-        Set<EntityType<?>> entities = entityManager.getMetamodel().getEntities();
-        List<Class<?>> entityManagerClasses = new ArrayList<>();
-        for(EntityType<?> tempEntityType : entities) {
-            entityManagerClasses.add(tempEntityType.getJavaType());
-        }
-        Class<?>[] classes = entityManagerClasses.toArray(new Class[0]);
-        config.exposeIdsFor(classes);
-    }
+    @Override
+    public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config) {}
 }
