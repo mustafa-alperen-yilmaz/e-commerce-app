@@ -17,9 +17,9 @@ export class ProductService {
     const searchUrl = `${this.baseUrl}/search/findByCategoryId?id=${theCategoryId}`;
     return this.getProducts(searchUrl);
   }
-  getProductListPaginate(thePage : number , thePageSize: number,theCategoryId : Number): Observable<GetResponseProducts>{
-    const searchUrl = `${this.baseUrl}/search/findByCategoryId?id=${theCategoryId}` + `&page=${thePage}&size=${thePageSize}`;
-    return this.httpClient.get<GetResponseProducts>(searchUrl);
+  getProductListPaginate(theCategoryId : Number): Observable<Product[]>{
+    const searchUrl = `${this.baseUrl}/search/findByCategoryId?id=${theCategoryId}`;
+    return this.getProducts(searchUrl);
   }
   getProductCategories(): Observable<ProductCategory[]>{
     return this.httpClient.get<GetResponseProductCategory>(this.categoryUrl)

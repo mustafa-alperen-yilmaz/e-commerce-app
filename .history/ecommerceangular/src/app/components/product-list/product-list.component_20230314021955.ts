@@ -15,7 +15,6 @@ export class ProductListComponent implements OnInit {
   thePageNumber: number = 1;
   thePageSize: number = 10;
   theTotalElements: number = 0;
-  previousCategoryId: number = 1;
   constructor(private productService: ProductService ,
               private route : ActivatedRoute) {
     }
@@ -50,16 +49,9 @@ export class ProductListComponent implements OnInit {
     }else{
       this.currentCategoryId = 1;
     }
-    if(this.previousCategoryId != this.currentCategoryId){
-      this.thePageNumber = 1;
-    }
-    this.previousCategoryId = this.currentCategoryId;
-    this.productService.getProductListPaginate(this.thePageNumber, this.thePageSize, this.currentCategoryId)
-    .subscribe(data =>{
-      this.products = data._embedded.products;
-      this.thePageNumber = data.page.number;
-      this.thePageSize = data.page.size;
-      this.theTotalElements = data.page.totalElements;
-    });
+    this.productService.getProductList(this.currentCategoryId)
+    .subscribe(data => {
+      this.products = data;
+    })
   }
 }
