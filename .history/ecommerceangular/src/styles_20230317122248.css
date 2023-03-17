@@ -807,12 +807,9 @@ footer ul li a{
   color:#fff
 }
 .new-pagenation-css{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
+  margin-bottom: footer;
 }
-
+/*
 footer{
   background:#232324;
   z-index:1;
@@ -820,10 +817,9 @@ footer{
   position:initial;
   bottom: 0;
   text-align:center;
-  padding:0px 0px 0px 10%;
-  margin-left: 8.5%;
-}
-/*
+  padding:0px 0px 0px 0px;
+}*/
+
 footer {
   background-color: #232324;
   color: #fff;
@@ -837,7 +833,6 @@ footer {
   margin-left: 8.5%;
   margin-top: auto;
 }
-*/
 
 footer li a{
   color:#313131;

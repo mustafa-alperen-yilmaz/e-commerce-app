@@ -55,20 +55,17 @@ export class ProductListComponent implements OnInit {
       this.thePageNumber = 1;
     }
     this.previousCategoryId = this.currentCategoryId;
-    this.productService.getProductListPaginate(this.thePageNumber -1, this.thePageSize, this.currentCategoryId)
-    .subscribe(this.processResult());
+    this.productService.getProductListPaginate(this.thePageNumber, this.thePageSize, this.currentCategoryId)
+    .subscribe(data =>{
+      this.products = data._embedded.products;
+      this.thePageNumber = data.page.number;
+      this.thePageSize = data.page.size;
+      this.theTotalElements = data.page.totalElements;
+    });
   }
   updatePageSize(pageSize: string){
     this.thePageSize = +pageSize;
     this.thePageNumber = 1;
     this.listProducts();
-  }
-  processResult(){
-    return(data: any)=>{
-      this.products = data._embedded.products;
-      this.thePageNumber = data.page.number + 1;
-      this.thePageSize = data.page.size;
-      this.theTotalElements = data.page.totalElements;
-    };
   }
 }

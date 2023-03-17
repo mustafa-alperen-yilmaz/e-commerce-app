@@ -56,7 +56,12 @@ export class ProductListComponent implements OnInit {
     }
     this.previousCategoryId = this.currentCategoryId;
     this.productService.getProductListPaginate(this.thePageNumber -1, this.thePageSize, this.currentCategoryId)
-    .subscribe(this.processResult());
+    .subscribe(data =>{
+      this.products = data._embedded.products;
+      this.thePageNumber = data.page.number;
+      this.thePageSize = data.page.size;
+      this.theTotalElements = data.page.totalElements;
+    });
   }
   updatePageSize(pageSize: string){
     this.thePageSize = +pageSize;
