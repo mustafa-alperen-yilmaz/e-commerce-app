@@ -25,7 +25,6 @@ export class ProducDetailsComponent implements OnInit {
     })
   }
   addToCart(){
-    const theCartItem = new CartItem(this.product);
-    this.cartService.addToCard(theCartItem);
+
   }
 }

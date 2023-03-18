@@ -10,9 +10,7 @@ import {Route , ActivatedRoute} from '@angular/router';
 })
 export class ProducDetailsComponent implements OnInit {
   product!: Product;
-  constructor(private productService: ProductService,
-    private route: ActivatedRoute ,
-    private route: ActivatedRoute){}
+  constructor(private productService: ProductService, private route: ActivatedRoute){}
   ngOnInit(): void {
     this.route.paramMap.subscribe(()=>{
       this.hanleProductDetails();
@@ -25,7 +23,6 @@ export class ProducDetailsComponent implements OnInit {
     })
   }
   addToCart(){
-    const theCartItem = new CartItem(this.product);
-    this.cartService.addToCard(theCartItem);
+
   }
 }
