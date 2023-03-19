@@ -13,7 +13,7 @@ import {CartItem} from 'src/app/common/cart-item';
 export class ProducDetailsComponent implements OnInit {
   product!: Product;
   constructor(private productService: ProductService,
-    private cartService: CartService ,
+    private route: ActivatedRoute ,
     private route: ActivatedRoute){}
   ngOnInit(): void {
     this.route.paramMap.subscribe(()=>{
@@ -28,6 +28,6 @@ export class ProducDetailsComponent implements OnInit {
   }
   addToCart(){
     const theCartItem = new CartItem(this.product);
-    this.cartService.addToCart(theCartItem);
+    this.cartService.addToCard(theCartItem);
   }
 }

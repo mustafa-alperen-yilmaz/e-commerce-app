@@ -28,6 +28,6 @@ export class ProducDetailsComponent implements OnInit {
   }
   addToCart(){
     const theCartItem = new CartItem(this.product);
-    this.cartService.addToCart(theCartItem);
+    this.cartService.addToCard(theCartItem);
   }
 }
