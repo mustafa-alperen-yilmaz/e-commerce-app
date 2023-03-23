@@ -13,7 +13,7 @@ export class CartService {
   constructor() { }
   addToCart(theCartItem: CartItem){
     let alreadyExistsInCart: boolean = false;
-    let existingCartItem: CartItem | undefined;
+    let existingCartItem: CartItem | undefined ="";
     if(this.cartItems.length > 0){
       existingCartItem = this.cartItems.find(tempCartItem => tempCartItem.id === theCartItem.id);
     alreadyExistsInCart =(existingCartItem != undefined);

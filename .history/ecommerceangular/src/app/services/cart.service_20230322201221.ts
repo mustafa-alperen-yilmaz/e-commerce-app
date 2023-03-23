@@ -13,12 +13,12 @@ export class CartService {
   constructor() { }
   addToCart(theCartItem: CartItem){
     let alreadyExistsInCart: boolean = false;
-    let existingCartItem: CartItem | undefined;
+    let existingCartItem: CartItem = null;
     if(this.cartItems.length > 0){
       existingCartItem = this.cartItems.find(tempCartItem => tempCartItem.id === theCartItem.id);
-    alreadyExistsInCart =(existingCartItem != undefined);
+    alreadyExistsInCart =(existingCartItem != null);
     if(alreadyExistsInCart){
-      if(existingCartItem !== undefined){
+      if(existingCartItem !== null){
         existingCartItem.quantity++;
       }
     }else{
