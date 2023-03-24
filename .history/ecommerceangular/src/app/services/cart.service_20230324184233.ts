@@ -68,9 +68,5 @@ export class CartService {
   }
   remove(theCartItem: CartItem){
     const itmeIndex = this.cartItems.findIndex(tempCartItem => tempCartItem.id === theCartItem.id);
-    if(itmeIndex > -1){
-      this.cartItems.splice(itmeIndex, 1);
-      this.computeCartTotals();
-    }
   }
 }
