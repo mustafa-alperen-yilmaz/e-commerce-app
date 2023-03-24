@@ -18,7 +18,7 @@ export class CartDetailsComponent implements OnInit {
   }
   listCartDetails(){
     this.cartItems = this.cartService.cartItems;
-    this.cartService.totalPrice.subscribe(data => this.totalPrice = data);
+    this.cartItems.totalPrice.subscribe(data=> this.totalPrice = data);
     this.cartService.totalQuantity.subscribe(data => this.totalQuantity = data);
     this.cartService.computeCartTotals();
   }

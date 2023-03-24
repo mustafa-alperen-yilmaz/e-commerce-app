@@ -1,6 +1,5 @@
 import { Component , OnInit} from '@angular/core';
 import {CartService} from 'src/app/services/cart.service';
-import {CartItem} from 'src/app/common/cart-item';
 
 @Component({
   selector: 'app-cart-details',
@@ -18,8 +17,7 @@ export class CartDetailsComponent implements OnInit {
   }
   listCartDetails(){
     this.cartItems = this.cartService.cartItems;
-    this.cartService.totalPrice.subscribe(data => this.totalPrice = data);
-    this.cartService.totalQuantity.subscribe(data => this.totalQuantity = data);
-    this.cartService.computeCartTotals();
+    this.cartItems.totalPrice.subscribe(data=> this.totalPrice = data;);
+    this.cartService.totalQuantity.subscribe(data => this.totalQuantity);
   }
 }
