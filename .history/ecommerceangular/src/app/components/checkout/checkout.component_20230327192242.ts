@@ -45,10 +45,6 @@ onSubmit(){
 
 }
 copyShippingAddressToBillingAddress(event){
-  if (event.target.checked) {
-    this.checkoutFormGroup.controls.billingAddress.setValue(this.checkedoutFormGroup.controls.shippingAddress.value);
-  }else{
-    this.checkoutFormGroup.controls.billingAddress.reset();
-  }
+
 }
 }
