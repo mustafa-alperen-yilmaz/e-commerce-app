@@ -17,15 +17,15 @@
             <p>{{tempCartItem.unitPrice | currency: 'EUR' }}</p>
           </td>
           <td>
-            <div class="items">
+            <div class="items" style="border: 10px; border-color: black;">
               <label>Quantity:</label>
               <div class="row no-gutters">
-                <div class="col" >
+                <div class="col">
                   <button (click)="increamentQuantity(tempCartItem)" class="btn btn-primary btn-sm" title="+">
                     <i class="fas fa-plus"></i>
                   </button>
                 </div>
-                <div class="col ml-4 mr-2"  style="border: 10px solid rgb(5, 91, 148); border-width: 2px;">
+                <div class="col ml-4 mr-2">
                   {{tempCartItem.quantity}}
                 </div>
                 <div class="col">
