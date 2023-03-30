@@ -76,14 +76,13 @@
             </div>
           </div>
         </div>
-        <!---->
           <div>
             <label class="au-checkbox">
               <input type="checkbox"(change)="copyShippingAddressToBillingAddress($event)">
-              <span class="au-checkmark"></span> Billing Address Same As Shipping Address
+              <span class="au-checkmark" ></span><label><p> Billing Address Same As Shipping Address</p></label>
             </label>
           </div>
-          <!---->
+          <label></label>
           <div formGroupName="billingAddress" class="form-area">
             <h3>Billing Address</h3>
             <div class="row">
@@ -184,7 +183,7 @@
               <div class="col-md-9">
                 <div class="input-space">
                   <select formControlName="expreationMonth">
-                    <option value="">TO DO</option>
+                    <option *ngFor="let month of creditCardMonths">{{month}}</option>
                     </select>
                 </div>
               </div>
@@ -195,7 +194,7 @@
               <div class="col-md-9">
                 <div class="input-space">
                   <select formControlName="expreationYear">
-                    <option value="">TO DO</option>
+                    <option *ngFor="let year of creditCardYears">{{year}}</option>
                     </select>
                 </div>
               </div>
