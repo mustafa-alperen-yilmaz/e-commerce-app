@@ -46,19 +46,6 @@ ngOnInit():void{
       expirationYear: ['']
     })
   });
-
-  const startMonth: number = new Date().getMonth()+1;
-  this.eCommerceShopFormService.getCreditCardMonths(startMonth).subscribe(
-    data => {
-      this.creditCardMonths = data;
-    }
-  );
-  this.eCommerceShopFormService.getCreditCardYears().subscribe(
-    data => {
-      this.creditCardYears = data;
-    }
-  );
-
 }
 onSubmit(){
 

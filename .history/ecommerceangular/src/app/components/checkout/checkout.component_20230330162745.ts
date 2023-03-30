@@ -53,11 +53,6 @@ ngOnInit():void{
       this.creditCardMonths = data;
     }
   );
-  this.eCommerceShopFormService.getCreditCardYears().subscribe(
-    data => {
-      this.creditCardYears = data;
-    }
-  );
 
 }
 onSubmit(){
