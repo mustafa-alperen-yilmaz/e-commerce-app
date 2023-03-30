@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
 import { EcommerceShopFormService } from 'src/app/services/ecommerce-shop-form.service';
+import { Event } from '@angular/router';
 
 @Component({
   selector: 'app-checkout',
@@ -63,7 +64,7 @@ export class CheckoutComponent implements OnInit {
 
   onSubmit() {}
 
-  copyShippingAddressToBillingAddress(event: any) {
+  copyShippingAddressToBillingAddress(event) {
     if (event.target.checked) {
       this.checkoutFormGroup.controls['billingAddress'].setValue(this.checkoutFormGroup.controls['shippingAddress'].value);
     } else {
