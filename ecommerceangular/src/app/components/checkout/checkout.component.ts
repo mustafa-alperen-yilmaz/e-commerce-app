@@ -14,6 +14,7 @@ export class CheckoutComponent implements OnInit {
   totalQuantity: number = 0;
   creditCardYears: number[] = [];
   creditCardMonths: number[] = [];
+  countries: Country[] = [];
 
   constructor(private formBuilder: FormBuilder, private eCommerceShopFormService: EcommerceShopFormService) {}
 
@@ -57,6 +58,11 @@ export class CheckoutComponent implements OnInit {
     this.eCommerceShopFormService.getCreditCardYear().subscribe(
       data => {
         this.creditCardYears = data;
+      }
+    );
+    this.eCommerceShopFormService.getCountries().subscribe(
+      data => {
+        this.countries = data;
       }
     );
   }
