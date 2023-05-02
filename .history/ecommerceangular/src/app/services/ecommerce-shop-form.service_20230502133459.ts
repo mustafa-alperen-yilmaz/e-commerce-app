@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Observable , of} from 'rxjs';
 import { HttpClient, HttpResponse } from '@angular/common/http';
-import { map } from 'rxjs/operators';
+import {map} form 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -10,17 +10,9 @@ export class EcommerceShopFormService {
   private countriesUrl = 'http://localhost:8080/api/countries';
   private statesUrl = 'http://localhost:8080/api/states';z
   constructor(private httpClient : HttpClient) { }
-
   getCountries(): Observable<Country[]>{
-    return this.httpClient.get<GetResponseCountries>(this.countriesUrl).pipe(
+    return this.httpClient.get<GetResponseCountries>(this.categoryUrl).pipe(
       map(response => response._embedded.countries)
-    );
-  }
-
-  getStates(theCategoryCode : string): Observable<State[]>{
-    const serachStatesUrl = `${this.statesUrl}/search/findByCountryCode?cdoe=${theCategoryCode}`;
-    retutn this.httpClient.get<GetResponseStates>(serachStatesUrl).pipe(
-      map(response => response._embedded.states)
     );
   }
 
@@ -45,10 +37,5 @@ export class EcommerceShopFormService {
 interface GetResponseCountries{
   _embedded:{
     countries: Country[];
-  }
-}
-interface GetResponseStates{
-  _embedded:{
-    states: State[];
   }
 }

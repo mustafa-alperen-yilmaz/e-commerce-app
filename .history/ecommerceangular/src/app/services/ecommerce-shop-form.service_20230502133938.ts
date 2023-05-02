@@ -19,9 +19,6 @@ export class EcommerceShopFormService {
 
   getStates(theCategoryCode : string): Observable<State[]>{
     const serachStatesUrl = `${this.statesUrl}/search/findByCountryCode?cdoe=${theCategoryCode}`;
-    retutn this.httpClient.get<GetResponseStates>(serachStatesUrl).pipe(
-      map(response => response._embedded.states)
-    );
   }
 
   getCreditCardMonths(startMonth: number): Observable<number[]>{
@@ -45,10 +42,5 @@ export class EcommerceShopFormService {
 interface GetResponseCountries{
   _embedded:{
     countries: Country[];
-  }
-}
-interface GetResponseStates{
-  _embedded:{
-    states: State[];
   }
 }
