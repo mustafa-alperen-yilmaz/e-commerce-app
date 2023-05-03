@@ -98,20 +98,21 @@ export class CheckoutComponent implements OnInit {
       );
     }
   }
-  getStates(formGroupName: string) {
-    const group = this.checkoutFormGroup.get(formGroupName);
-    if (group) {
-      const country = group.value.country;
-      if (country) {
-        const countryCode = country.code;
+  getStates(formGroupName: string){
+    const formGroup = this.checkoutFormGroup.get(formGroupName);
+    if (formGroup) {
+      const countryControl = formGroup.get('country');
+      if (countryControl) {
+        const countryCode = countryControl.value.code;
+        const countryName = countryControl.value.name;
         this.eCommerceShopFormService.getStates(countryCode).subscribe(
-          data => {
-            if (formGroupName === 'shippingAddress') {
+          data =>{
+            if(formGroupName === 'shippingAddress'){
               this.shippingAddressStates = data;
-            } else {
+            }else{
               this.billingAddressStates = data;
             }
-            const stateControl = group.get('state');
+            const stateControl = formGroup.get('state');
             if (stateControl) {
               stateControl.setValue(data[0]);
             }

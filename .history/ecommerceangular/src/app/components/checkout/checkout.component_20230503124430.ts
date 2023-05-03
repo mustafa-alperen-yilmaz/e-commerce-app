@@ -111,10 +111,7 @@ export class CheckoutComponent implements OnInit {
             } else {
               this.billingAddressStates = data;
             }
-            const stateControl = group.get('state');
-            if (stateControl) {
-              stateControl.setValue(data[0]);
-            }
+            group.get('state').setValue(data[0]);
           }
         );
       }

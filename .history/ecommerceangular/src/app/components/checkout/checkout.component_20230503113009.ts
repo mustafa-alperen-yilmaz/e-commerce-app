@@ -98,26 +98,19 @@ export class CheckoutComponent implements OnInit {
       );
     }
   }
-  getStates(formGroupName: string) {
-    const group = this.checkoutFormGroup.get(formGroupName);
-    if (group) {
-      const country = group.value.country;
-      if (country) {
-        const countryCode = country.code;
-        this.eCommerceShopFormService.getStates(countryCode).subscribe(
-          data => {
-            if (formGroupName === 'shippingAddress') {
-              this.shippingAddressStates = data;
-            } else {
-              this.billingAddressStates = data;
-            }
-            const stateControl = group.get('state');
-            if (stateControl) {
-              stateControl.setValue(data[0]);
-            }
-          }
-        );
+  getStates(formGroupName: string){
+    const a = this.checkoutFormGroup.get(formGroupName);
+    const countryCode = a.value.country.code;
+    const countryName = a.value.country.name;
+    this.eCommerceShopFormService.getStates(countryCode).subscribe(
+      data =>{
+        if(formGroupName === 'shippingAddress'){
+          this.shippingAddressStates = data;
+        }else{
+          this.billingAddressStates = data;
+        }
+        a.get('state').setValue(data[0]);
       }
-    }
+    );
   }
 }

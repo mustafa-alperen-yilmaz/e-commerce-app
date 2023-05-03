@@ -35,7 +35,7 @@
             <div class="col-md-2"><label>Country</label></div>
             <div class="col-md-9">
               <div class="input-space">
-                <select formControlName="country" (change)="getStates('shippingAddress')">
+                <select formControlName="country" name="" id="" (change)="getStates('shippingAddress')">
                   <option *ngFor="let country of countries" [ngValue]="country">
                     {{country.name}}
                   </option>
@@ -63,10 +63,8 @@
             <div class="col-md-2"><label>State</label></div>
             <div class="col-md-9">
               <div class="input-space">
-                <select formControlName="state">
-                  <option *ngFor="let state of shippingAddressStates"[ngValue]="state">
-                    {{state.name}}
-                  </option>
+                <select formControlName="state" name="" id="">
+                  <option *ngFor="let state of shippingAddressStates"[ngValue]="state">TO DO</option>
                 </select>
               </div>
             </div>
@@ -96,7 +94,7 @@
               <div class="col-md-2"><label>Country</label></div>
               <div class="col-md-9">
                 <div class="input-space">
-                  <select formControlName="country" (change)="getStates('billingAddress')">
+                  <select formControlName="country" name="" id="">
                     <option *ngFor="let country of countries" [ngValue]="country">
                       {{country.name}}
                     </option>
@@ -127,10 +125,8 @@
               <div class="col-md-2"><label>State</label></div>
               <div class="col-md-9">
                 <div class="input-space">
-                  <select formControlName="state">
-                    <option *ngFor="let state of billingAddressStates" [ngValue]="state">
-                      {{state.name}}
-                    </option>
+                  <select formControlName="state" name="" id="">
+                    <option value="">TO DO</option>
                   </select>
                 </div>
               </div>

@@ -18,7 +18,6 @@ export class CheckoutComponent implements OnInit {
   creditCardMonths: number[] = [];
   countries: Country[] = [];
   shippingAddressStates: State[] = [];
-  billingAddressStates: State[] = [];
 
   constructor(private formBuilder: FormBuilder, private eCommerceShopFormService: EcommerceShopFormService) {}
 
@@ -98,26 +97,16 @@ export class CheckoutComponent implements OnInit {
       );
     }
   }
-  getStates(formGroupName: string) {
-    const group = this.checkoutFormGroup.get(formGroupName);
-    if (group) {
-      const country = group.value.country;
-      if (country) {
-        const countryCode = country.code;
-        this.eCommerceShopFormService.getStates(countryCode).subscribe(
-          data => {
-            if (formGroupName === 'shippingAddress') {
-              this.shippingAddressStates = data;
-            } else {
-              this.billingAddressStates = data;
-            }
-            const stateControl = group.get('state');
-            if (stateControl) {
-              stateControl.setValue(data[0]);
-            }
-          }
-        );
+  getStates(formGroupName: string){
+    const formGroup = this.checkoutFormGroup.get(formGroupName);
+    const countryCode = formGroup.value.country.code;
+    const countryName = formGroup.value.country.name;
+    this.eCommerceShopFormService.getStates(countryCode).subscribe(
+      data =>{
+        if(formGroupName === 'shippingAddress'){
+
+        }
       }
-    }
+    )
   }
 }
