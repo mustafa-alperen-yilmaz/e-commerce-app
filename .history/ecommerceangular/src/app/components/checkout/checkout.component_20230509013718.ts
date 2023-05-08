@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup , FormControl , Validators , FormBuilder} from '@angular/forms';
+import { FormGroup } from '@angular/forms';
+import { FormControl , Validators , FormBuilder} from '@angular/forms';
 import { EcommerceShopFormService } from 'src/app/services/ecommerce-shop-form.service';
 import {Country} from 'src/app/common/country';
 import {State} from 'src/app/common/state';
@@ -71,11 +72,7 @@ export class CheckoutComponent implements OnInit {
     );
   }
 
-  onSubmit() {
-    if(this.checkoutFormGroup.invalid){
-      this.checkoutFormGroup.markAllAsTouched();
-    }
-  }
+  onSubmit() {}
 
   get firstName() {return this.checkoutFormGroup.get('customer.firstName');}
   get lastName() {return this.checkoutFormGroup.get('customer.lastName');}

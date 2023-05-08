@@ -30,7 +30,7 @@
                     Last name is required
                   </div>
                   <div *ngIf="firstName?.errors?.['minlength']">
-                    Last name is must be least 2 characters
+                    First name is must be least 2 characters
                   </div>
                 </div>
               </div>
@@ -41,14 +41,6 @@
             <div class="col-md-9">
               <div class="input-space">
                 <input type="text" formControlName="email" title="email" placeholder="a">
-                <div *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="alert alert-danger mt-1">
-                  <div *ngIf="email?.errors?.['required']">
-                    email is required
-                  </div>
-                  <div *ngIf="email?.errors?.['pattern']">
-                    email is must be a valid email address format
-                  </div>
-                </div>
               </div>
             </div>
           </div>
