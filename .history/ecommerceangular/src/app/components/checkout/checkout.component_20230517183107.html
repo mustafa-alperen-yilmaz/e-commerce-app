@@ -124,9 +124,6 @@
                   <div *ngIf="shippingAddressZipCode?.errors?.['required'] || shippingAddressZipCode?.errors?.['notOnlyWhiteSpace']">
                     Zip Code is required
                   </div>
-                  <div *ngIf="shippingAddressZipCode?.errors?.['minlength']">
-                    Zip Code is must be least 5 characters
-                  </div>
                 </div>
               </div>
             </div>
@@ -217,9 +214,6 @@
                   <div *ngIf="billingAddressZipCode?.invalid && (billingAddressZipCode?.dirty || billingAddressZipCode?.touched)" class="alert alert-danger mt-1">
                     <div *ngIf="billingAddressZipCode?.errors?.['required'] || billingAddressZipCode?.errors?.['notOnlyWhiteSpace']">
                       Zip Code is required
-                    </div>
-                    <div *ngIf="billingAddressZipCode?.errors?.['minlength']">
-                      Zip Code is must be least 5 characters
                     </div>
                   </div>
                 </div>
