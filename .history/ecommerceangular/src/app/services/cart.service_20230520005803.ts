@@ -7,7 +7,7 @@ import {Subject} from 'rxjs';
 })
 export class CartService {
   cartItems: CartItem[] = [];
-  totalPrice: Subject<number> = new Subject<number>();
+  totalPrice: Subject<number> = new BehaviorSubject<number>(0);
   totalQuantity: Subject<number> = new Subject<number>();
 
   constructor() { }
@@ -57,5 +57,20 @@ export class CartService {
 
   logCartData(totalPriceValue: number , totalQuantityValue: number){
     console.log('Cart info: Total price = ' + totalPriceValue + ', Total quantity = ' + totalQuantityValue);
+  }
+  decreamentQuantity(theCartItem: CartItem){
+    theCartItem.quantity--;
+    if(theCartItem.quantity === 0){
+      this.remove(theCartItem);
+    }else{
+      this.computeCartTotals();
+    }
+  }
+  remove(theCartItem: CartItem){
+    const itmeIndex = this.cartItems.findIndex(tempCartItem => tempCartItem.id === theCartItem.id);
+    if(itmeIndex > -1){
+      this.cartItems.splice(itmeIndex, 1);
+      this.computeCartTotals();
+    }
   }
 }

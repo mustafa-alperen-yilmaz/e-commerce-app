@@ -290,9 +290,6 @@
                     <div *ngIf="creditCardSecurityCode?.errors?.['required'] || creditCardSecurityCode?.errors?.['notOnlyWhiteSpace']">
                       Security Code is required
                     </div>
-                    <div *ngIf="creditCardSecurityCode?.errors?.['pattern']">
-                      Card Number must be 3 digits
-                    </div>
                   </div>
                 </div>
               </div>

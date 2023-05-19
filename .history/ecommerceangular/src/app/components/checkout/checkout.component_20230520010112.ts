@@ -75,14 +75,6 @@ export class CheckoutComponent implements OnInit {
       }
     );
   }
-  reviewCartDetails(){
-    this.cartService.totalQuantity.subscribe(
-      totalQuantity => this.totalQuantity = totalQuantity
-    );
-    this.cartService.totalPrice.subscribe(
-      totalPrice => this.totalPrice = totalPrice
-    );
-  }
 
   onSubmit() {
     if(this.checkoutFormGroup.invalid){

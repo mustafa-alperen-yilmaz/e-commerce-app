@@ -74,14 +74,14 @@ export class CheckoutComponent implements OnInit {
         this.countries = data;
       }
     );
-  }
-  reviewCartDetails(){
-    this.cartService.totalQuantity.subscribe(
-      totalQuantity => this.totalQuantity = totalQuantity
-    );
-    this.cartService.totalPrice.subscribe(
-      totalPrice => this.totalPrice = totalPrice
-    );
+    reviewCartDetails(){
+      this.cartService.totalQuantity.subscribe(
+        totalQuantity => this.totalQuantity = totalQuantity
+      );
+      this.cartService.totalPrice.subscribe(
+        totalPrice => this.totalPrice = totalPrice
+      );
+    }
   }
 
   onSubmit() {

@@ -24,9 +24,6 @@ export class CheckoutComponent implements OnInit {
   constructor(private formBuilder: FormBuilder, private eCommerceShopFormService: EcommerceShopFormService ,private cartService: CartService) {}
 
   ngOnInit(): void {
-
-    this.reviewCartDetails();
-
     this.checkoutFormGroup = this.formBuilder.group({
       customer: this.formBuilder.group({
         firstName: new FormControl('',[Validators.required, Validators.minLength(2),EcommerceShopvalidators.notOnlyWhiteSpace]),
@@ -73,14 +70,6 @@ export class CheckoutComponent implements OnInit {
       data => {
         this.countries = data;
       }
-    );
-  }
-  reviewCartDetails(){
-    this.cartService.totalQuantity.subscribe(
-      totalQuantity => this.totalQuantity = totalQuantity
-    );
-    this.cartService.totalPrice.subscribe(
-      totalPrice => this.totalPrice = totalPrice
     );
   }
 
