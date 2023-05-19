@@ -254,10 +254,7 @@
                   <input type="text" formControlName="nameOnCard" title="Street" placeholder="a">
                   <div *ngIf="creditCardNameOnCard?.invalid && (creditCardNameOnCard?.dirty || creditCardNameOnCard?.touched)" class="alert alert-danger mt-1">
                     <div *ngIf="creditCardNameOnCard?.errors?.['required'] || creditCardNameOnCard?.errors?.['notOnlyWhiteSpace']">
-                      Name is required
-                    </div>
-                    <div *ngIf="creditCardNameOnCard?.errors?.['minlength']">
-                      Name must be least 2 characters
+                      Credit Card Type is required
                     </div>
                   </div>
                 </div>
@@ -271,7 +268,7 @@
                   <input type="text" formControlName="cardNumber" title="Street" placeholder="a">
                   <div *ngIf="creditCardNumber?.invalid && (creditCardNumber?.dirty || creditCardNumber?.touched)" class="alert alert-danger mt-1">
                     <div *ngIf="creditCardNumber?.errors?.['required'] || creditCardNumber?.errors?.['notOnlyWhiteSpace']">
-                      Card Number is required
+                      Credit Card Type is required
                     </div>
                   </div>
                 </div>
@@ -285,7 +282,7 @@
                   <input type="text" formControlName="securityCode" title="Street" placeholder="a">
                   <div *ngIf="creditCardSecurityCode?.invalid && (creditCardSecurityCode?.dirty || creditCardSecurityCode?.touched)" class="alert alert-danger mt-1">
                     <div *ngIf="creditCardSecurityCode?.errors?.['required'] || creditCardSecurityCode?.errors?.['notOnlyWhiteSpace']">
-                      Security Code is required
+                      Credit Card Type is required
                     </div>
                   </div>
                 </div>

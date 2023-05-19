@@ -93,9 +93,8 @@ export class CheckoutComponent implements OnInit {
   get billingAddressCountry() {return this.checkoutFormGroup.get('billingAddress.country');}
 
   get creditCardType() {return this.checkoutFormGroup.get('creditCard.cardType');}
-  get creditCardNameOnCard() {return this.checkoutFormGroup.get('creditCard.nameOnCard');}
-  get creditCardNumber() {return this.checkoutFormGroup.get('creditCard.cardNumber');}
-  get creditCardSecurityCode() {return this.checkoutFormGroup.get('creditCard.cardSecurityCode');}
+  get billingAddressCountry() {return this.checkoutFormGroup.get('billingAddress.country');}
+  get billingAddressCountry() {return this.checkoutFormGroup.get('billingAddress.country');}
 
   copyShippingAddressToBillingAddress(event: any) {
     if (event.target.checked) {
