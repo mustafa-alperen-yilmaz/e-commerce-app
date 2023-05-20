@@ -9,7 +9,6 @@ import { CheckoutService } from 'src/app/services/checkout.service';
 import {Router} from '@angular/router';
 import { Purchase } from 'src/app/common/purchase';
 
-
 @Component({
   selector: 'app-checkout',
   templateUrl: './checkout.component.html',

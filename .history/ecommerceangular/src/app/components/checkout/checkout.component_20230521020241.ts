@@ -107,7 +107,7 @@ export class CheckoutComponent implements OnInit {
     }
     */
    // short
-    let orderItems: OrderItem[] = cartItems.map(tempCartItem => new OrderItem(tempCartItem));
+    let orderItems: OrderItem[] = cartItems.map(tempCartItem => new orderItems(tempCartItem));
     // set up purchase
     let purchase = new Purchase();
     // purchase <-> customer

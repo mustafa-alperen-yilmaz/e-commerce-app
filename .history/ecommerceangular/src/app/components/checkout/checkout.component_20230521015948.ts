@@ -7,8 +7,6 @@ import { EcommerceShopvalidators } from 'src/app/validators/ecommerce-shopvalida
 import { CartService } from 'src/app/services/cart.service';
 import { CheckoutService } from 'src/app/services/checkout.service';
 import {Router} from '@angular/router';
-import { Purchase } from 'src/app/common/purchase';
-
 
 @Component({
   selector: 'app-checkout',
