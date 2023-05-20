@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 import com.example.ecommerce.dao.CustomerRepository;
 import com.example.ecommerce.dto.Purchase;
 import com.example.ecommerce.dto.PurchaseResponse;
-import com.example.ecommerce.entity.Customer;
 import com.example.ecommerce.entity.Order;
 import com.example.ecommerce.entity.OrderItem;
 
@@ -37,11 +36,7 @@ public class CheckoutServiceImpl implements CheckoutService {
         // order with addresses
         order.setBillingAddress(purchase.getBillingAddress());
         order.setShippingAddress(purchase.getShippingAddress());
-        // oreder with customer
-        Customer customer = purchase.getCustomer();
-        customer.add(order);
-
-        return new PurchaseResponse(orderTrackingNumber);
+        return null;
     }
     private String generateOrderTrackingNumber(){
         return UUID.randomUUID().toString();

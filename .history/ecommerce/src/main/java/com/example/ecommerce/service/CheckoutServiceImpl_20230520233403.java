@@ -1,17 +1,11 @@
 package com.example.ecommerce.service;
 
-import java.util.Set;
-import java.util.UUID;
-
-import org.hibernate.cache.spi.support.AbstractReadWriteAccess.Item;
 import org.springframework.stereotype.Service;
 
 import com.example.ecommerce.dao.CustomerRepository;
 import com.example.ecommerce.dto.Purchase;
 import com.example.ecommerce.dto.PurchaseResponse;
-import com.example.ecommerce.entity.Customer;
 import com.example.ecommerce.entity.Order;
-import com.example.ecommerce.entity.OrderItem;
 
 import jakarta.transaction.Transactional;
 
@@ -31,20 +25,10 @@ public class CheckoutServiceImpl implements CheckoutService {
         //generate tracking number
         String orderTrackingNumber = generateOrderTrackingNumber();
         order.setOrderTrackingNumber(orderTrackingNumber);
-        //populate the order with items
-        Set<OrderItem> orderItems = purchase.getOrderItems();
-        orderItems.forEach(item -> order.add(item));
-        // order with addresses
-        order.setBillingAddress(purchase.getBillingAddress());
-        order.setShippingAddress(purchase.getShippingAddress());
-        // oreder with customer
-        Customer customer = purchase.getCustomer();
-        customer.add(order);
-
-        return new PurchaseResponse(orderTrackingNumber);
+        return null;
     }
     private String generateOrderTrackingNumber(){
-        return UUID.randomUUID().toString();
+        return null;
     
     }
 }
