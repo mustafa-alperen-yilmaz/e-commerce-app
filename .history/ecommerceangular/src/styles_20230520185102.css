@@ -314,7 +314,7 @@ input.au-input.au-input-xl{
   top:0;
   bottom:0;
   background:#fff;
-  overflow-y:scroll;
+  overflow-y:auto
 }
 
 .menu-sidebar .logo{
@@ -351,8 +351,8 @@ input.au-input.au-input-xl{
 .menu-sidebar-content{
   position:relative;
   height:-webkit-calc(100vh - 75px);
-  height:-moz-calc(100vh - 75px);
-  height:calc(100vh - 75px)
+  height:-moz-calc(100vh - 100px);
+  height:calc(100vh - 100px)
 }
 
 .navbar-sidebar{
@@ -907,7 +907,7 @@ footer ul li{
 
 @media (max-width:991px){
    .section-content-p30{
-      padding:100px;
+      padding:0
   }
   .page-container{
       position:relative;

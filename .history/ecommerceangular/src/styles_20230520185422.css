@@ -314,7 +314,7 @@ input.au-input.au-input-xl{
   top:0;
   bottom:0;
   background:#fff;
-  overflow-y:scroll;
+  overflow-y:auto
 }
 
 .menu-sidebar .logo{
@@ -340,7 +340,7 @@ input.au-input.au-input-xl{
 }
 
 .menu-sidebar .navbar-list .navbar-sub-list{
-  display:flex;
+  display:absolute;
   padding-left:34px
 }
 

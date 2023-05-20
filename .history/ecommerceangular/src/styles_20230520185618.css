@@ -309,12 +309,12 @@ input.au-input.au-input-xl{
 
 .menu-sidebar{
   width:200px;
-  position:fixed;
+  position:absolute;
   left:0;
   top:0;
   bottom:0;
   background:#fff;
-  overflow-y:scroll;
+  overflow-y:auto
 }
 
 .menu-sidebar .logo{
