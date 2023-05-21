@@ -8,8 +8,6 @@ import { CartService } from 'src/app/services/cart.service';
 import { CheckoutService } from 'src/app/services/checkout.service';
 import {Router} from '@angular/router';
 import { Purchase } from 'src/app/common/purchase';
-import { OrderItem } from 'src/app/common/order-item';
-import { Order } from 'src/app/common/order';
 
 
 @Component({
@@ -102,7 +100,7 @@ export class CheckoutComponent implements OnInit {
     // get items from cart
     const cartItems = this.cartService.cartItems;
     //create order form cart
-    let orderItems: OrderItem[] = cartItems.map(tempCartItem => new OrderItem(tempCartItem));
+    let orderItems: OrderItem[] = cartItems.map(tempCartItem => new OrderItems(tempCartItem));
     // set up purchase
     let purchase = new Purchase();
     // purchase <-> customer
